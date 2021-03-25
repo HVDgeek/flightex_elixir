@@ -1,5 +1,10 @@
 defmodule Flightex do
-  def hello do
-    :world
+  alias Flightex.Users.Agent, as: UserAgent
+  alias Flightex.Users.CreateOrUpdate, as: CreateOrUpdateUser
+
+  def start_agents do
+    UserAgent.start_link(%{})
   end
+
+  defdelegate create_user(params), to: CreateOrUpdateUser, as: :call
 end
