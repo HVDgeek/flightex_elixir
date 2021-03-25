@@ -29,5 +29,3 @@ defmodule Flightex.Bookings.Booking do
      }}
   end
 end
-
-# "b5d6bd96-76de-4ced-bce1-535d6d558c49"
