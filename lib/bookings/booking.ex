@@ -7,7 +7,8 @@ defmodule Flightex.Bookings.Booking do
 
   defstruct @keys
 
-  def build(%User{id: id_usuario}, data_completa, cidade_origem, cidade_destino) do
+  def build(%User{id: id_usuario}, data_completa, cidade_origem, cidade_destino)
+      when is_bitstring(cidade_origem) and is_bitstring(cidade_destino) do
     case NaiveDateTime.from_iso8601(data_completa) do
       {:ok, date} -> build_booking(id_usuario, date, cidade_origem, cidade_destino)
       {:error, :invalid_format} -> {:error, "Invalid date!"}
