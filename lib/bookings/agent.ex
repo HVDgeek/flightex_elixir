@@ -13,7 +13,7 @@ defmodule Flightex.Bookings.Agent do
 
   defp get_booking(state, booking_id) do
     case Map.get(state, booking_id) do
-      nil -> {:error, "Boooking not found!"}
+      nil -> {:error, "Flight Booking not found"}
       booking -> {:ok, booking}
     end
   end
