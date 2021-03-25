@@ -16,9 +16,9 @@ defmodule Flightex.Users.CreateOrUpdateTest do
     test "When all params are valid, save the user", %{params: params} do
       response = CreateOrUpdate.call(params)
 
-      expected_response = {:ok, "User created or update successfully!"}
+      # expected_response = {:ok, "User created or update successfully!"}
 
-      assert response == expected_response
+      assert {:ok, _user_id} = response
     end
 
     test "When there are invalid params, return an error", %{params: params} do
